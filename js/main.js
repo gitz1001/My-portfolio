@@ -1,4 +1,23 @@
 
+// Add Collapsing Scroll Effect
+const sections = document.querySelectorAll('section'); // Select all sections to apply the effect
+
+function handleScroll() {
+  const scrollPosition = window.scrollY;
+  sections.forEach(section => {
+    if (scrollPosition > section.offsetTop - window.innerHeight / 1.5) {
+      section.classList.remove('collapsed'); // Show section
+    } else {
+      section.classList.add('collapsed'); // Hide section with collapse effect
+    }
+  });
+}
+
+// Listen for scroll event
+window.addEventListener('scroll', handleScroll);
+
+// Initial call to set sections' state on page load
+handleScroll();
 
 (function() {
   "use strict";
