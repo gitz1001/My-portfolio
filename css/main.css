@@ -349,6 +349,27 @@ h6 {
   display: block;
   background-color: rgba(33, 37, 41, 0.03);
 }
+/* Add this part for active state styling */
+.navmenu a.active {
+  color: blue; /* You can change 'blue' to any color you prefer */
+  font-weight: bold; /* Optional: makes the active link stand out more */
+}
+
+.navmenu a.active .navicon {
+  color: var(--accent-color); /* Adjust icon color when active */
+}
+
+.navmenu a:hover,
+.navmenu .active,
+.navmenu .active:focus {
+  color: var(--nav-hover-color); /* You can adjust this if you want different hover behavior */
+}
+
+.navmenu a:hover .navicon,
+.navmenu .active .navicon,
+.navmenu .active:focus .navicon {
+  color: var(--accent-color);
+}
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -605,6 +626,20 @@ section,
   .hero p {
     font-size: 20px;
   }
+}
+/*--------------------------------------------------------------
+Section Collapse Effect
+--------------------------------------------------------------*/
+section {
+  padding: 50px;
+  transition: all 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section.collapsed {
+  opacity: 0;
+  transform: translateY(50px);
 }
 
 /*--------------------------------------------------------------
